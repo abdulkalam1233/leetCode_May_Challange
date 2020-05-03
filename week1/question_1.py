@@ -9,14 +9,12 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        l = 0
-        r = n
-        
-        mid = n/2
+        left = 0
+        right = n
 
-        while l <= r: 
+        while left <= right: 
 
-            mid = l + (r - l) // 2; 
+            mid = left + (right - left) // 2; 
 
             # Check if x is present at mid 
             if isBadVersion(mid) and not isBadVersion(mid-1): 
@@ -24,10 +22,10 @@ class Solution:
             
             # If isBadVersion(mid) is false, ignore left half 
             elif isBadVersion(mid) == False: 
-                l = mid + 1
+                left = mid + 1
 
             # If isBadVersion(mid) is false, ignore right half
             else: 
-                r = mid - 1
+                right = mid - 1
                 
         return -1
