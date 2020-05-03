@@ -20,11 +20,11 @@ class Solution:
             if isBadVersion(mid) and not isBadVersion(mid-1): 
                 return mid
             
-            # If isBadVersion(mid) is false, ignore left half 
+            # If isBadVersion(mid) is False, ignore left half 
             elif isBadVersion(mid) == False: 
                 left = mid + 1
 
-            # If isBadVersion(mid) is false, ignore right half
+            # If isBadVersion(mid) is True, ignore right half
             else: 
                 right = mid - 1
                 
