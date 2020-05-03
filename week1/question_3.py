@@ -30,3 +30,20 @@ class Solution:
                 return False
         return True
 #-------------------------------------------------------------------
+
+# type 3
+# -----------------------------------------------------------------
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if(len(ransomNote)>len(magazine)):
+            return False;
+        if(len(ransomNote) == 0):
+            return True
+        ransomNote = Counter(ransomNote)
+        magazine = Counter(magazine)
+        for i in ransomNote:
+            if ransomNote[i] > magazine[i]:
+                return False
+        return True
+# -------------------------------------------------------------------
