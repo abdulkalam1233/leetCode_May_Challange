@@ -8,4 +8,9 @@ class Solution:
             else:
                 result += '1'
         return int(result,2)
-                
+# ----------------------------------------------
+# type 2
+class Solution:
+    def findComplement(self, num: int) -> int:
+        digits  = math.ceil(math.log2(num + 1))
+        return pow(2,digits)-1-num
